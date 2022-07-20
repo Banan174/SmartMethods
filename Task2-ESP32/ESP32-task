@@ -1,0 +1,37 @@
+ESP32 Installation Steps
+Now, to install the ESP32 board in the Arduino IDE, you need to follow the below steps −
+1- Make sure you have Arduino IDE (preferably the latest version) installed on your machine
+2- Open Arduino and go to File −> Preferences
+3- In the Additional Boards Manager URL, enter:
+https://dl.espressif.com/dl/package_esp32_index.json
+
+In case you have an existing JSON file's URL in the preferences (this is likely if you've installed ESP8266,
+stm32duino, or any such additional board in the IDE), you can just append the above path to the existing
+path, using a comma. An example is shown below, for ESP8266 and ESP32 boards −
+http://arduino.esp8266.com/stable/package_esp8266com_index.json,
+https://dl.espressif.com/dl/package_esp32_index.json
+
+4- Go to Tools −> Board−> Boards Manager. A pop−up would open up. Search for ESP32 and install
+the esp32 by Espressif Systems board.
+Verifying the Installation
+5- Go to Tools −> Boards. You can see a whole bunch of boards under the ESP32 Arduino section. Choose the
+board of your choice. If you are not sure which board best represents the one you have, you can choose ESP32
+Dev Module.
+6- Next, connect your board to your machine using the USB Cable. You should see an additional COM Port
+under Tools−> Port. Select that additional port. In case you see multiple ports, you can disconnect the USB
+and see which port disappeared. That port corresponds to ESP32.
+Once the port is identified, pick any one example sketch from File −> Examples. We will choose the
+StartCounter example from File −> Examples −> Preferences −> StartCounter.
+Open that sketch, compile it and flash it into the ESP32 by clicking on the Upload button (the right arrow
+button, besides the Compile button).
+Then open the Serial Monitor using Tools −> Serial Monitor,You should see the counter value getting
+incremented after every ESP32 restart.
+Congratulations!! You've set up the environment for working with ESP32.
+
+If you want to turn on lighting:
+Go to File > 01.Basics > Blink
+void setup(){ pinMode(LED_BUILTIN , OUTPUT); }
+void loop(){ digitalWrite(LED_BUILTIN , HIGHT); // Turn the LED on .
+ delay(500);
+ digitalWrite(LED_BUILTIN , LOW); // Turn the LED off .
+ delay(500); }
