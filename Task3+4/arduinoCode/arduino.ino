@@ -50,16 +50,16 @@ void loop() {
   }
   String command = getValue(computerText, ' ',0);
 
-    if (command == "يمين") {
+    if (command == "right") {
       base.write(base_angle -= 20);
     }
-    if ( command == "يسار" ) {
+    if ( command == "left" ) {
      base.write(base_angle += 20);  }
 
-    if (command == "فوق" ) {
+    if (command == "up" ) {
       shoulder.write(shoulder_angle -= 20); }
 
-   if ( command == "اسفل" ) {
+   if ( command == "down" ) {
      shoulder.write(shoulder_angle += 20); }
   
     Serial.println(command);
